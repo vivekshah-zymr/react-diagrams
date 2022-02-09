@@ -94,3 +94,12 @@ Simply run `yarn` then `yarn build` or `yarn build:prod` in the root directory a
 ## Built with react-diagrams
 
 > Do you have an interesting project built with *react-diagrams*? PR it into this section for others to see.
+
+## Generate tarball file after code change
+
+Do appropriate code changes in file. 
+First install all dependencies with original version eg. 6.7.0, by doing `yarn install` from main folder, then change npm version to `-alpha` in your change package. eg.react-diagram-core Then do `yarn build:prod` to generate dist inside the packages. After that goto that package level and do `yarn pack`, this will generate tarball file (.tgz). 
+Now give that tarball file reference in relevent place like package.json of react-diagram, react-diagram-default, react-diagram-routing. Do `yarn install` again change default package version to -alpha. And then do `yarn clean` and do `yarn build:prod`. After that goto react-diagram-default package level and do `yarn pack`, this will generate tarball file (.tgz). 
+Same process from above to change dependcides in routing package josn. from 6.7.0 to tarball file. And again yarn install and yarn pack to genreate react-diagram tarball file.
+
+In your project use that tarball file.
