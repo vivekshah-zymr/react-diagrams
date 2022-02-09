@@ -68,6 +68,16 @@ export class DiagramEngine extends CanvasEngine<CanvasEngineListener, DiagramMod
 			return diagramModel.getNode(nodeElement.getAttribute('data-nodeid')).getPort(element.getAttribute('data-name'));
 		}
 
+		// Maybe we're dragging a point to a port and, because of how the "LinksLayer" might be set "on top" of the
+ 		// "NodesLayer" (with z-index), we're missing it. Check all the elements that are located at the coordinates
+ 		// of the event.
+ 		let targets = document.elementsFromPoint(event.clientX, event.clientY);
+ 		element = targets.filter(el => el.matches('.port[data-name]'))[0];
+ 		if (element) {
+ 			var nodeElement = Toolkit.closest(element, '.node[data-nodeid]') as HTMLElement;
+			return diagramModel.getNode(nodeElement.getAttribute('data-nodeid')).getPort(element.getAttribute('data-name'));
+ 		}
+
 		//look for a point
 		element = Toolkit.closest(target, '.point[data-id]');
 		if (element) {
