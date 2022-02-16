@@ -2,7 +2,7 @@ import { DiagramEngine, LabelModel, LabelModelGenerics, LabelModelOptions } from
 import { DeserializeEvent } from '@projectstorm/react-canvas-core';
 
 export interface DefaultLabelModelOptions extends LabelModelOptions {
-	label?: string;
+	label?: any;
 }
 
 export interface DefaultLabelModelGenerics extends LabelModelGenerics {
@@ -18,7 +18,7 @@ export class DefaultLabelModel extends LabelModel<DefaultLabelModelGenerics> {
 		});
 	}
 
-	setLabel(label: string) {
+	setLabel(label: any) {
 		this.options.label = label;
 	}
 

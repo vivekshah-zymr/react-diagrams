@@ -119,6 +119,20 @@ export class DefaultLinkWidget extends React.Component<DefaultLinkProps, Default
 						onMouseDown: (event) => {
 							this.props.selected?.(event);
 							this.addPointToLink(event, 1);
+						},
+						onMouseEnter: (event: MouseEvent) => {
+							// this.setState({ selected: true });
+							this.props.link.setHovered(true);
+							if (this.props.link.getOptions().tooltipItem) {
+								this.props.diagramEngine.repaintCanvas();
+							}
+						},
+						onMouseLeave: (event: MouseEvent) => {
+							// this.setState({ selected: false });
+							this.props.link.setHovered(false);
+							if (this.props.link.getOptions().tooltipItem) {
+								this.props.diagramEngine.repaintCanvas();
+							}
 						}
 					},
 					'0'

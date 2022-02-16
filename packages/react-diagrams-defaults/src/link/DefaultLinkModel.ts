@@ -20,10 +20,12 @@ export interface DefaultLinkModelListener extends LinkModelListener {
 export interface DefaultLinkModelOptions extends BaseModelOptions {
 	width?: number;
 	color?: string;
+	isHovered?: boolean;
 	selectedColor?: string;
 	curvyness?: number;
 	type?: string;
 	testName?: string;
+	tooltipItem?: any;
 }
 
 export interface DefaultLinkModelGenerics extends LinkModelGenerics {
@@ -37,6 +39,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 			type: 'default',
 			width: options.width || 3,
 			color: options.color || 'gray',
+			isHovered: false,
 			selectedColor: options.selectedColor || 'rgb(0,192,255)',
 			curvyness: 50,
 			...options
@@ -78,6 +81,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 			...super.serialize(),
 			width: this.options.width,
 			color: this.options.color,
+			isHovered: this.options.isHovered,
 			curvyness: this.options.curvyness,
 			selectedColor: this.options.selectedColor
 		};
@@ -86,6 +90,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 	deserialize(event: DeserializeEvent<this>) {
 		super.deserialize(event);
 		this.options.color = event.data.color;
+		this.options.isHovered = event.data.isHovered;
 		this.options.width = event.data.width;
 		this.options.curvyness = event.data.curvyness;
 		this.options.selectedColor = event.data.selectedColor;
@@ -108,5 +113,14 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 	setColor(color: string) {
 		this.options.color = color;
 		this.fireEvent({ color }, 'colorChanged');
+	}
+	setHovered(isHovered: boolean) {
+		if (isHovered) {
+			this.addLabel(this.getOptions().tooltipItem);
+		} else {
+			this.labels = [];
+		}
+		this.options.isHovered = isHovered;
+		this.fireEvent({ isHovered }, 'hoverChanged');
 	}
 }

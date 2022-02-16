@@ -26,7 +26,8 @@ export default () => {
 	// link the ports
 	let link1 = port1.link<DefaultLinkModel>(port2);
 	link1.getOptions().testName = 'Test';
-	link1.addLabel('Hello World!');
+	// link1.addLabel('Hello World!');
+	link1.getOptions().tooltipItem = <div>Test of tooltip <br/>  in new line</div>;
 
 	//4) add the models to the root graph
 	model.addAll(node1, node2, link1);
