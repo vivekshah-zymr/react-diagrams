@@ -20,6 +20,6 @@ namespace S {
 
 export class DefaultLabelWidget extends React.Component<DefaultLabelWidgetProps> {
 	render() {
-		return <S.Label>{this.props.model.getOptions().label}</S.Label>;
+		return <S.Label className='tooltip-item'>{this.props.model.getOptions().label}</S.Label>;
 	}
 }
