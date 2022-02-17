@@ -115,7 +115,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 		this.fireEvent({ color }, 'colorChanged');
 	}
 	setHovered(isHovered: boolean) {
-		if (isHovered) {
+		if (isHovered && this.getOptions().tooltipItem) {			
 			this.addLabel(this.getOptions().tooltipItem);
 		} else {
 			this.labels = [];
