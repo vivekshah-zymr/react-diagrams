@@ -97,9 +97,11 @@ Simply run `yarn` then `yarn build` or `yarn build:prod` in the root directory a
 
 ## Generate tarball file after code change
 
-Do appropriate code changes in file. 
-First install all dependencies with original version eg. 6.7.0, by doing `yarn install` from main folder, then change npm version to `-alpha` in your change package. eg.react-diagram-core Then do `yarn build:prod` to generate dist inside the packages. After that goto that package level and do `yarn pack`, this will generate tarball file (.tgz). 
-Now give that tarball file reference in relevent place like package.json of react-diagram, react-diagram-default, react-diagram-routing. Do `yarn install` again change default package version to -alpha. And then do `yarn clean` and do `yarn build:prod`. After that goto react-diagram-default package level and do `yarn pack`, this will generate tarball file (.tgz). 
-Same process from above to change dependcides in routing package josn. from 6.7.0 to tarball file. And again yarn install and yarn pack to genreate react-diagram tarball file.
-
-In your project use that tarball file.
+Do appropriate code changes in file.
+Remove the react-diagram related files from all node_modules folders. (Main node_module and node_module under the packages)
+1) Then install all dependencies with original version eg. 6.7.0, by doing `yarn install` from main folder. 
+2) Go to package.json of `react-diagram-core`, change package version to `-alpha.X`. After that do `yarn clean` and then `yarn build:prod` from main folder. After that goto `react-diagram-core` and do `yarn pack`, this will generate tarball file (.tgz).
+3) Now give that tarball file reference in relevent place like package.json of react-diagram, react-diagram-default, react-diagram-routing. Delete react-diagram related files from all node_moudles folder.
+4)Do `yarn install` again, Go to package.json of `react-diagram-default` change package version to `-alpha.X` And then do `yarn clean` and do `yarn build:prod`. that goto `react-diagram-default` and do `yarn pack`, this will generate tarball file (.tgz). 
+Now repeate the same step for `react-diagram-routing` and then `react-diagram`
+Now copy this all 4 tarball file to your project for use.
