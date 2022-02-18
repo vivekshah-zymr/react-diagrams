@@ -64,7 +64,8 @@ export class DefaultPortModel extends PortModel<DefaultPortModelGenerics> {
 		// if (port instanceof DefaultPortModel) {
 		// 	return this.options.in !== port.getOptions().in;
 		// }
-		return true;
+		// return true; // not always returning true to block self link creation or link to 0,0 point.
+		return !(this === port);
 	}
 
 	createLinkModel(factory?: AbstractModelFactory<LinkModel>): LinkModel {
