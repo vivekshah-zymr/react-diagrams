@@ -44,7 +44,8 @@ export class DefaultLinkSegmentWidget extends React.Component<DefaultLinkSegment
 			onContextMenu: () => {
 				if (!this.props.link.isLocked()) {
 					event.preventDefault();
-					this.props.link.remove();
+					// Commented below code to prevent deletion of link on right click of mouse.
+					// this.props.link.remove();
 				}
 			}
 		});

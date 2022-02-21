@@ -1,6 +1,6 @@
 {
 	"name": "@projectstorm/react-diagrams-routing",
-	"version": "6.7.0-alpha.8",
+	"version": "6.7.0-alpha.9",
 	"author": "dylanvorster",
 	"license": "MIT",
 	"repository": {
@@ -31,8 +31,8 @@
 	"typings": "./dist/@types/index",
 	"dependencies": {
 		"@projectstorm/geometry": "6.7.0",
-		"@projectstorm/react-diagrams-core": "./projectstorm-react-diagrams-core-v6.7.0-alpha.8.tgz",
-		"@projectstorm/react-diagrams-defaults": "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.8.tgz"
+		"@projectstorm/react-diagrams-core": "./projectstorm-react-diagrams-core-v6.7.0-alpha.9.tgz",
+		"@projectstorm/react-diagrams-defaults": "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.9.tgz"
 	},
 	"peerDependencies": {
 		"dagre": "^0.8.5",
