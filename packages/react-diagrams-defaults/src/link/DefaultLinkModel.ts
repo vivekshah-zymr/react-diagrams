@@ -19,6 +19,7 @@ export interface DefaultLinkModelListener extends LinkModelListener {
 
 export interface DefaultLinkModelOptions extends BaseModelOptions {
 	width?: number;
+	isDashed?: boolean;
 	color?: string;
 	isHovered?: boolean;
 	selectedColor?: string;
@@ -38,6 +39,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 		super({
 			type: 'default',
 			width: options.width || 3,
+			isDashed: options.isDashed || false,
 			color: options.color || 'gray',
 			isHovered: false,
 			selectedColor: options.selectedColor || 'rgb(0,192,255)',
@@ -80,6 +82,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 		return {
 			...super.serialize(),
 			width: this.options.width,
+			isDashed: this.options.isDashed,
 			color: this.options.color,
 			isHovered: this.options.isHovered,
 			curvyness: this.options.curvyness,
@@ -92,6 +95,7 @@ export class DefaultLinkModel extends LinkModel<DefaultLinkModelGenerics> {
 		this.options.color = event.data.color;
 		this.options.isHovered = event.data.isHovered;
 		this.options.width = event.data.width;
+		this.options.isDashed = event.data.isDashed;
 		this.options.curvyness = event.data.curvyness;
 		this.options.selectedColor = event.data.selectedColor;
 	}

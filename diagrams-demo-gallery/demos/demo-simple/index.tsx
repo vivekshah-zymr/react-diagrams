@@ -28,7 +28,7 @@ export default () => {
 	link1.getOptions().testName = 'Test';
 	// link1.addLabel('Hello World!');
 	link1.getOptions().tooltipItem = <div>Test of tooltip <br/>  in new line</div>;
-
+	link1.getOptions().isDashed = true;
 	//4) add the models to the root graph
 	model.addAll(node1, node2, link1);
 

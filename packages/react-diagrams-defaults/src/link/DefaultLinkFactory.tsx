@@ -47,6 +47,7 @@ export class DefaultLinkFactory<Link extends DefaultLinkModel = DefaultLinkModel
 	generateLinkSegment(model: Link, selected: boolean, path: string) {
 		return (
 			<S.Path
+				className={`${selected ? "" : model.getOptions().isDashed ? "dashed-line" : ""}`}
 				selected={selected}
 				stroke={selected ? model.getOptions().selectedColor : model.getOptions().color}
 				strokeWidth={model.getOptions().width}
