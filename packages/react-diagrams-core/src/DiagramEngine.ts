@@ -188,16 +188,20 @@ export class DiagramEngine extends CanvasEngine<CanvasEngineListener, DiagramMod
 		if (!this.canvas) {
 			throw new Error('Canvas needs to be set first');
 		}
-		if (!element) {
-			element = this.getNodePortElement(port);
+		try {
+			if (!element) {
+				element = this.getNodePortElement(port);
+			}
+			const sourceRect = element.getBoundingClientRect();
+			const point = this.getRelativeMousePoint({
+				clientX: sourceRect.left,
+				clientY: sourceRect.top
+			});
+			const zoom = this.model.getZoomLevel() / 100.0;
+			return new Rectangle(point.x, point.y, sourceRect.width / zoom, sourceRect.height / zoom);
+		} catch (ex) {
+			console.log("From DiagramEngine.ts ===",ex);
 		}
-		const sourceRect = element.getBoundingClientRect();
-		const point = this.getRelativeMousePoint({
-			clientX: sourceRect.left,
-			clientY: sourceRect.top
-		});
-		const zoom = this.model.getZoomLevel() / 100.0;
-		return new Rectangle(point.x, point.y, sourceRect.width / zoom, sourceRect.height / zoom);
 	}
 
 	/**
