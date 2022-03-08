@@ -64,7 +64,7 @@ export class NodeWidget extends React.Component<NodeProps> {
 			_.forEach(this.props.node.getPorts(), (port) => {
 				port.updateCoords(this.props.diagramEngine.getPortCoords(port));
 			});
-		} catch (ex) {}
+		} catch (ex) { console.log("From NodeWidget.tsx ===",ex); }
 	}
 
 	componentDidMount(): void {
