@@ -2438,10 +2438,10 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.9.2.tgz#adea7b6953cbb34651766b0548468e743c6a2353"
   integrity sha512-VZMYa7+fXHdwIq1TDhSXoVmSPEGM/aa+6Aiq3nVVJ9bXr24zScr+NlKFKC3iPljA7ho/GAZr+d2jOf5GIRC30Q==
 
-"@projectstorm/react-diagrams-core@./projectstorm-react-diagrams-core-v6.7.0-alpha.23.tgz":
-  version "6.7.0-alpha.23"
-  uid "437df70647edb1ff643ef8f91ede926390c812cf"
-  resolved "./projectstorm-react-diagrams-core-v6.7.0-alpha.23.tgz#437df70647edb1ff643ef8f91ede926390c812cf"
+"@projectstorm/react-diagrams-core@./projectstorm-react-diagrams-core-v6.7.0-alpha.24.tgz":
+  version "6.7.0-alpha.24"
+  uid "2ec6280f41dd58a330b3a92f629111d9b53959fc"
+  resolved "./projectstorm-react-diagrams-core-v6.7.0-alpha.24.tgz#2ec6280f41dd58a330b3a92f629111d9b53959fc"
   dependencies:
     "@projectstorm/geometry" "6.7.0"
     "@projectstorm/react-canvas-core" "6.7.0"
@@ -2454,12 +2454,12 @@
     "@projectstorm/geometry" "^6.7.0"
     "@projectstorm/react-canvas-core" "^6.7.0"
 
-"@projectstorm/react-diagrams-defaults@./projectstorm-react-diagrams-defaults-v6.7.0-alpha.23.tgz":
-  version "6.7.0-alpha.23"
-  uid ceb66716387de15ae8b2d01d36fd7bbef469050a
-  resolved "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.23.tgz#ceb66716387de15ae8b2d01d36fd7bbef469050a"
+"@projectstorm/react-diagrams-defaults@./projectstorm-react-diagrams-defaults-v6.7.0-alpha.24.tgz":
+  version "6.7.0-alpha.24"
+  uid "7993829a380a051c10a38fcac5a930102b631288"
+  resolved "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.24.tgz#7993829a380a051c10a38fcac5a930102b631288"
   dependencies:
-    "@projectstorm/react-diagrams-core" "./projectstorm-react-diagrams-core-v6.7.0-alpha.23.tgz"
+    "@projectstorm/react-diagrams-core" "./projectstorm-react-diagrams-core-v6.7.0-alpha.24.tgz"
 
 "@projectstorm/react-diagrams-defaults@^6.7.0":
   version "6.7.0"
@@ -2468,13 +2468,13 @@
   dependencies:
     "@projectstorm/react-diagrams-core" "^6.7.0"
 
-"@projectstorm/react-diagrams-routing@./projectstorm-react-diagrams-routing-v6.7.0-alpha.23.tgz":
-  version "6.7.0-alpha.23"
-  resolved "./projectstorm-react-diagrams-routing-v6.7.0-alpha.23.tgz#f8a90f1bd662b9e0643041b73ba2b6b07b982c4c"
+"@projectstorm/react-diagrams-routing@./projectstorm-react-diagrams-routing-v6.7.0-alpha.24.tgz":
+  version "6.7.0-alpha.24"
+  resolved "./projectstorm-react-diagrams-routing-v6.7.0-alpha.24.tgz#eedc8d8a04a4e84a4d0e1e18d9299351760c2d91"
   dependencies:
     "@projectstorm/geometry" "6.7.0"
-    "@projectstorm/react-diagrams-core" "./projectstorm-react-diagrams-core-v6.7.0-alpha.23.tgz"
-    "@projectstorm/react-diagrams-defaults" "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.23.tgz"
+    "@projectstorm/react-diagrams-core" "./projectstorm-react-diagrams-core-v6.7.0-alpha.24.tgz"
+    "@projectstorm/react-diagrams-defaults" "./projectstorm-react-diagrams-defaults-v6.7.0-alpha.24.tgz"
 
 "@projectstorm/react-diagrams-routing@^6.7.0":
   version "6.7.0"

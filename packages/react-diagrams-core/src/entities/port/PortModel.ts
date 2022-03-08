@@ -147,11 +147,13 @@ export class PortModel<G extends PortModelGenerics = PortModelGenerics> extends 
 	}
 
 	updateCoords(coords: Rectangle) {
-		this.width = coords.getWidth();
-		this.height = coords.getHeight();
-		this.setPosition(coords.getTopLeft());
-		this.reportedPosition = true;
-		this.reportPosition();
+		try {
+			this.width = coords.getWidth();
+			this.height = coords.getHeight();
+			this.setPosition(coords.getTopLeft());
+			this.reportedPosition = true;
+			this.reportPosition();
+		} catch (ex) { console.log("From updateCoords PortModel.ts ===", ex); }
 	}
 
 	canLinkToPort(port: PortModel): boolean {
