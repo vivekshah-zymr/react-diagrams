@@ -185,10 +185,10 @@ export class DiagramEngine extends CanvasEngine<CanvasEngineListener, DiagramMod
 	 * Calculate rectangular coordinates of the port passed in.
 	 */
 	getPortCoords(port: PortModel, element?: HTMLDivElement): Rectangle {
-		if (!this.canvas) {
-			throw new Error('Canvas needs to be set first');
-		}
 		try {
+			if (!this.canvas) {
+				throw new Error('Canvas needs to be set first');
+			}
 			if (!element) {
 				element = this.getNodePortElement(port);
 			}
@@ -200,7 +200,7 @@ export class DiagramEngine extends CanvasEngine<CanvasEngineListener, DiagramMod
 			const zoom = this.model.getZoomLevel() / 100.0;
 			return new Rectangle(point.x, point.y, sourceRect.width / zoom, sourceRect.height / zoom);
 		} catch (ex) {
-			console.log("From DiagramEngine.ts ===",ex);
+			// console.log("From DiagramEngine.ts ===",ex);
 		}
 	}
 

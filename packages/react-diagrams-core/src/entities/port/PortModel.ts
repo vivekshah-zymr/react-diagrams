@@ -153,7 +153,9 @@ export class PortModel<G extends PortModelGenerics = PortModelGenerics> extends 
 			this.setPosition(coords.getTopLeft());
 			this.reportedPosition = true;
 			this.reportPosition();
-		} catch (ex) { console.log("From updateCoords PortModel.ts ===", ex); }
+		} catch (ex) { 
+			// console.log("From updateCoords PortModel.ts ===", ex); 
+		}
 	}
 
 	canLinkToPort(port: PortModel): boolean {

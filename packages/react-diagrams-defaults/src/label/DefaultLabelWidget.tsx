@@ -8,12 +8,12 @@ export interface DefaultLabelWidgetProps {
 
 namespace S {
 	export const Label = styled.div`
-		background: rgba(0, 0, 0, 0.8);
+		/* background: rgba(0, 0, 0, 0.8);
 		border-radius: 5px;
+		font-family: sans-serif; */
 		color: white;
 		font-size: 12px;
 		padding: 4px 8px;
-		font-family: sans-serif;
 		user-select: none;
 	`;
 }

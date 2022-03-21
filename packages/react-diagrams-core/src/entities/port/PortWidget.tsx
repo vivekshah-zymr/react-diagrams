@@ -24,7 +24,9 @@ export class PortWidget extends React.Component<PortProps> {
 		//added try catch
 		try {
 			this.props.port.updateCoords(this.props.engine.getPortCoords(this.props.port, this.ref.current));
-		} catch (ex) { console.log("From PortWidget.tsx ===",ex); }
+		} catch (ex) { 
+			// console.log("From PortWidget.tsx ===",ex); 
+		}
 
 	}
 
